@@ -48,8 +48,6 @@ def app():
                                  help = '関連度が大きいとグラフが作成できません.小さいと作成に時間がかかります.')
         get_kg = st.button('ナレッジグラフを作成する')
         st.text('\n')
-        st.text('\n')
-        st.text('\n')
         
         if get_kg:
             dt_now = datetime.datetime.now().date()            
