@@ -55,7 +55,7 @@ def app():
             net = npt.co_network(title='Co-occurrence network', save = True, width=700, height=500)
             CoFile = open(str(dt_now) + "_Co-occurrence network.html", 'r', encoding='utf-8')
             Co_source_code = CoFile.read() 
-            components.html(Co_source_code, height = 600)
+            components.html(Co_source_code, height = 500)
             btn = st.download_button(label="Download html", data=CoFile, file_name = str(dt_now) + "_Co-occurrence network.html", mime="text/html")
 
             st.write('2) クラス分類')
