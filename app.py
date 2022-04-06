@@ -5,6 +5,7 @@ import app2
 import app3
 import app4
 import streamlit as st
+import os
 
 PAGES = {
     "top": app0,
@@ -16,6 +17,12 @@ PAGES = {
 
 st.sidebar.title('Please Select')
 selection = st.sidebar.radio("Analysis items", list(PAGES.keys()))
+
+delete = st.srider.button('Data delete')
+if delete:
+    os.remove('df.csv')
+    os.remone('df_stopwords.csv')
+
 page = PAGES[selection]
 page.app()
 
