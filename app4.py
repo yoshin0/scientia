@@ -58,8 +58,8 @@ def app():
             CoFile2 = open(str(dt_now) + "_Co-occurrence network.html", 'r', encoding='utf-8')
             Co_source_code = CoFile.read()
             Co_source_code2 = CoFile2.read()
-            components.html(Co_source_code, height = 550)
             btn = st.download_button(label="Download html", data=Co_source_code2, file_name = str(dt_now) + "_Co-occurrence network.html", mime="text/html")
+            components.html(Co_source_code, height = 550)
 
             st.write('2) クラス分類')
             st.text('\n')
