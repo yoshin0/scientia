@@ -52,11 +52,11 @@ def app():
         if get_kg:
             dt_now = datetime.datetime.now().date()            
             npt.build_graph(stopwords=stopwords, min_edge_frequency=set_num)
-            net = npt.co_network(title='Co-occurrence network', save = True, width=700, height=500)
+            net = npt.co_network(title='Co-occurrence network', save = True, width=700, height=550)
             CoFile = open(str(dt_now) + "_Co-occurrence network.html", 'r', encoding='utf-8')
-            Co_source_code = CoFile.read() 
-            components.html(Co_source_code, height = 500)
-            btn = st.download_button(label="Download html", data=CoFile, file_name = str(dt_now) + "_Co-occurrence network.html", mime="text/html")
+            Co_source_code = CoFile.read()
+            a = components.html(Co_source_code, height = 550)
+            btn = st.download_button(label="Download html", data=a, file_name = str(dt_now) + "_Co-occurrence network.html", mime="text/html")
 
             st.write('2) クラス分類')
             st.text('\n')
