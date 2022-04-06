@@ -1,7 +1,6 @@
 streamlit
 numpy
 pandas
-PIL 
+Pillow
 nlplot
-subprocess
-datetime
+click<=8.0.4
