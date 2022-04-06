@@ -3,7 +3,7 @@ from PIL import Image
 import subprocess
 
 def app():
-    ico = Image.open('icon.png')
+    ico = Image.open('icon2.png')
     st.image(ico)
     st.header('How to Use')
     
