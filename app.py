@@ -16,7 +16,6 @@ PAGES = {
 
 st.sidebar.title('Please Select')
 selection = st.sidebar.radio("Analysis items", list(PAGES.keys()))
-
 page = PAGES[selection]
 page.app()
 
