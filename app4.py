@@ -4,10 +4,14 @@ import nlplot
 import os
 import streamlit.components.v1 as components
 import re
+from PIL import Image
+import datetime
 
 
 def app():
-    st.title('ナレッジグラフの作成')
+    ico = Image.open('icon.png')
+    st.image(ico)
+    st.header('ナレッジグラフの可視化')
     
     #解析データとstopwordsの有無の確認
     exist = os.path.isfile('df.csv')
@@ -47,14 +51,19 @@ def app():
         st.text('\n')
         st.text('\n')
         
-        if get_kg:            
+        if get_kg:
+            dt_now = datetime.datetime.now().date()            
             npt.build_graph(stopwords=stopwords, min_edge_frequency=set_num)
-            net = npt.co_network(title='Co-occurrence network')
-            
+            net = npt.co_network(title='Co-occurrence network', save = True, width=800, height=600)
+            CoFile = open(str(dt_now) + "_Co-occurrence network.html", 'r', encoding='utf-8')
+            Co_source_code = CoFile.read() 
+            components.html(Co_source_code, height = 600)
+
+
             st.write('2) クラス分類')
             st.text('\n')
             sun = npt.sunburst(title='All sentiment sunburst chart', colorscale=True,
-                color_continuous_scale='Oryel', width=780, height=550, save=True)
+                color_continuous_scale='Oryel', width=780, height=550)
 
             sun.write_html("sun.html")
             SunFile = open("sun.html", 'r', encoding='utf-8')

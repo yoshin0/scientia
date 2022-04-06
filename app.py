@@ -13,8 +13,11 @@ PAGES = {
     "頻出単語の可視化": app3,
     "ナレッジグラフの作成": app4
 }
-st.sidebar.title('Analysis items')
-selection = st.sidebar.radio("Go to", list(PAGES.keys()))
+
+st.sidebar.title('Please Select')
+selection = st.sidebar.radio("Analysis items", list(PAGES.keys()))
+
 page = PAGES[selection]
 page.app()
+
 

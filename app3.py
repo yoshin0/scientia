@@ -3,10 +3,13 @@ import pandas as pd
 import nlplot
 import os
 import streamlit.components.v1 as components
+from PIL import Image
 
 
 def app():
-    st.title('頻出単語の可視化')
+    ico = Image.open('icon.png')
+    st.image(ico)
+    st.header('頻出単語の可視化')
     
     #解析データとstopwordsの有無の確認
     exist = os.path.isfile('df.csv')

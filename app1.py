@@ -1,8 +1,11 @@
 import streamlit as st
 import pandas as pd
+from PIL import Image
 
 def app():
-   st.title('解析データの作成')
+   ico = Image.open('icon.png')
+   st.image(ico)
+   st.header('解析データの作成')
    st.write('1) データのアップロード')
     
    #ファイルの読み込み
