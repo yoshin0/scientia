@@ -18,7 +18,7 @@ PAGES = {
 st.sidebar.title('Please Select')
 selection = st.sidebar.radio("Analysis items", list(PAGES.keys()))
 
-delete = st.srider.button('Data delete')
+delete = st.sidebar.button('Data delete')
 if delete:
     os.remove('df.csv')
     os.remone('df_stopwords.csv')
