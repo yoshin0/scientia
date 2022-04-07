@@ -21,7 +21,7 @@ selection = st.sidebar.radio("Analysis items", list(PAGES.keys()))
 delete = st.sidebar.button('Data delete')
 if delete:
     os.remove('df.csv')
-    os.remone('df_stopwords.csv')
+    os.remove('df_stopwords.csv')
 
 page = PAGES[selection]
 page.app()
