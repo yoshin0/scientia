@@ -44,7 +44,7 @@ def app():
             n = int(n[0])
         n = int(n[0])
         
-        set_num= st.number_input('関連度を指定してください.', min_value=10, max_value=1000, value=n, step=1,
+        set_num= st.number_input('関連度を指定してください.', min_value=2, max_value=1000, value=n, step=1,
                                  help = '関連度が大きいとグラフが作成できません.小さいと作成に時間がかかります.')
         get_kg = st.button('ナレッジグラフを作成する')
         st.text('\n')
