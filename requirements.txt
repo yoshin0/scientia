@@ -4,3 +4,4 @@ pandas
 Pillow
 nlplot==1.4.0
 click<=8.0.4
+protobuf==3.20.*
